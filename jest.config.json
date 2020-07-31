@@ -1,0 +1,10 @@
+{
+    "testRegex": "((\\.|/*.)(spec))\\.(js|jsx)?$",
+    "moduleNameMapper": {
+      "(.*(css|scss|style|sass|gltf))$": "identity-obj-proxy"
+    },
+    "moduleDirectories": [
+      "<rootDir>/src",
+      "node_modules"
+    ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "hangman3d",
+  "version": "1.0.0",
+  "description": "Hangman game inspired by netguru recruitment task, extended with THREEjs model and firebase authentication. Live version will be available on hangman-three.web.app.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --c webpack.config.js --mode development --open",
+    "build": "webpack --c webpack.config.js --mode production",
+    "lint": "eslint --ext .js --ext .jsx ./",
+    "lint:fix": "eslint --ext .js --ext .jsx ./ --fix",
+    "stylelint": "stylelint \"**/*.scss\"",
+    "stylelint:fix": "stylelint \"**/*.scss\" --fix",
+    "test": "jest --c jest.config.json",
+    "test:watch": "jest --c jest.config.json --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cybulskimateusz/hangman3d.git"
+  },
+  "author": "cybulskimateusz@icloud.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cybulskimateusz/hangman3d/issues"
+  },
+  "homepage": "https://github.com/cybulskimateusz/hangman3d#readme",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "firebase": "^7.15.5",
+    "lodash": "^4.17.17",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-three-fiber": "^4.2.17",
+    "react-uuid": "^1.0.2",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "three": "^0.118.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@testing-library/dom": "^7.20.0",
+    "@testing-library/react": "^10.4.3",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.5",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.1.0",
+    "node-sass": "^4.14.1",
+    "redux-mock-store": "^1.5.4",
+    "sass-loader": "^9.0.0",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.6.1",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
