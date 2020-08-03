@@ -7,6 +7,7 @@ import { setLoadedWord } from 'actions/loadingActions';
 import KeyboardHandler from 'components/KeyboardHandler';
 import GameOverScreen from 'containers/GameOverScreen';
 import Folk from 'containers/Folk';
+import ClueDisplay from 'containers/ClueDisplay';
 
 const Game = () => {
   const { loadedWord, loadedModels } = useSelector(({ loadingReducer }) => loadingReducer);
@@ -77,6 +78,7 @@ const Game = () => {
       <GameOverScreen isActive={gameOver} resetFunc={reset} />
       <KeyboardHandler onPressed={setChar} isActive={!gameOver && isReady} />
       <Folk show={missed.size} />
+      <ClueDisplay clue={clue} exposed={Array.from(exposed)} />
     </>
   );
 };
