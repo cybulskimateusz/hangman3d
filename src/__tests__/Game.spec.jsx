@@ -9,6 +9,11 @@ import { fireEvent, createEvent } from '@testing-library/dom';
 
 jest.mock('components/KeyboardHandler');
 
+jest.mock('containers/Folk', () => {
+  const Folk = ({ show }) => (<p>{show}</p>);
+  return Folk;
+});
+
 const mockDispatch = jest.fn();
 jest.mock('react-redux', () => ({
   useDispatch: () => mockDispatch,
