@@ -8,6 +8,7 @@ import KeyboardHandler from 'components/KeyboardHandler';
 import GameOverScreen from 'containers/GameOverScreen';
 import Folk from 'containers/Folk';
 import ClueDisplay from 'containers/ClueDisplay';
+import VirtualKeyboard from 'containers/VirtualKeyboard';
 
 const Game = () => {
   const { loadedWord, loadedModels } = useSelector(({ loadingReducer }) => loadingReducer);
@@ -79,6 +80,7 @@ const Game = () => {
       <KeyboardHandler onPressed={setChar} isActive={!gameOver && isReady} />
       <Folk show={missed.size} />
       <ClueDisplay clue={clue} exposed={Array.from(exposed)} />
+      <VirtualKeyboard ignore={[...Array.from(missed), ...Array.from(exposed)]} />
     </>
   );
 };
