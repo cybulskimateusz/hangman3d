@@ -5,9 +5,11 @@ import store from 'store/store';
 import AccountScreen from 'containers/AccountScreen';
 import ScoreDisplay from 'components/ScoreDisplay';
 import Loader from 'components/Loader';
+import FirestoreScoreController from 'components/FirestoreScoreController';
 
 const App = () => (
   <Provider store={store}>
+    <FirestoreScoreController />
     <Loader />
     <ScoreDisplay />
     <AccountScreen />

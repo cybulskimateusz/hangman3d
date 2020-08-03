@@ -32,7 +32,7 @@ const FirestoreScoreController = () => {
 
   useEffect(() => {
     const { uid } = user;
-    if (uid) dispatchFirestoreScore();
+    if (uid) dispatchFirestoreScore(uid);
     else dispatch(setScore(0));
   }, [user]);
 
