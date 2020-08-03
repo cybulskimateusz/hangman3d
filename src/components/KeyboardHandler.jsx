@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import EventListener from 'react-event-listener';
 
 export const correctChar = ({ key }) => {
-  const regex = /^[A-Za-z.-]$/;
+  const regex = /^[A-Za-z.-\s]$/;
   if (regex.test(key)) return key.toUpperCase();
   return null;
 };
