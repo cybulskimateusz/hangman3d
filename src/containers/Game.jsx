@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import fetchWord from 'utils/fetchWord';
 
@@ -84,4 +84,4 @@ const Game = () => {
     </>
   );
 };
-export default Game;
+export default memo(Game);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import LogOutButton from 'components/LogOutButton';
 import RemoveAccountButton from 'components/RemoveAccountButton';
@@ -10,4 +10,4 @@ const AccountForm = () => (
   </form>
 );
 
-export default AccountForm;
+export default memo(AccountForm);

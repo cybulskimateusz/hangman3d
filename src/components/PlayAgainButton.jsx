@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 const PlayAgainButton = ({ onClick }) => (
@@ -11,4 +11,4 @@ PlayAgainButton.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-export default PlayAgainButton;
+export default memo(PlayAgainButton);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -37,4 +37,4 @@ PasswordInput.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-export default PasswordInput;
+export default memo(PasswordInput);

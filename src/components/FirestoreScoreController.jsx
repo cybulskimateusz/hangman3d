@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, memo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { firestore } from 'fire';
@@ -45,4 +45,4 @@ const FirestoreScoreController = () => {
 };
 
 export { getScore, sendScore, clearScore };
-export default FirestoreScoreController;
+export default memo(FirestoreScoreController);

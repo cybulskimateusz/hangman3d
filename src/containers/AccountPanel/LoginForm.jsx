@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 
 import SignUpButton from 'components/SignUpButton';
 import GoogleAuthButton from 'components/GoogleAuthButton';
@@ -24,4 +24,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default memo(LoginForm);

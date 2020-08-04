@@ -1,5 +1,7 @@
 /* eslint-disable no-param-reassign */
-import React, { useState, useEffect, useRef } from 'react';
+import React, {
+  useState, useEffect, useRef, memo,
+} from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import PropType from 'prop-types';
 import * as THREE from 'three';
@@ -73,4 +75,4 @@ SceneSubject.defaultProps = {
   loadingCallback: () => {},
 };
 
-export default SceneSubject;
+export default memo(SceneSubject);

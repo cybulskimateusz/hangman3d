@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, memo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { detectAuthentication } from 'actions/authActions';
 import AccountForm from './AccountForm';
@@ -15,4 +15,4 @@ const AccountPanel = () => {
   return isLoggedIn ? <AccountForm /> : <LoginForm />;
 };
 
-export default AccountPanel;
+export default memo(AccountPanel);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import PropTypes from 'prop-types';
 import SceneSubject from 'components/SceneSubject';
 import Controls from 'components/Controls';
@@ -80,4 +80,4 @@ Scene.defaultProps = {
   progressCallback: () => {},
 };
 
-export default Scene;
+export default memo(Scene);

@@ -1,0 +1,56 @@
+.loader {
+    height: 150px;
+
+    position: relative;
+    width: 150px;
+
+    &__outter {
+    background: rgba(0,0,0,.9);
+    height: 100vh;
+    margin: auto;
+    padding: 25% 50%;
+
+    position: absolute;
+    width: 100vw;
+    z-index: 3;
+    }
+
+    .current_progress {
+        align-items: center;
+        color: white;
+        font-size: 40px;
+        height: 100%;
+        left: -50%;
+        position: absolute;
+        text-align: center;
+        top: 34%;
+        width: 100%;
+    }
+    
+    &__inner {
+        background: linear-gradient(rgba(0,0,0,0) 70%, rgba(255,255,255,1) 30%);
+        border-radius: 25px;
+        content: '';
+        height: 150px;
+        position: absolute;
+        width: 2px;
+
+        @for $i from 1 through 50 {
+            &:nth-child(#{$i}) {
+                --pos: #{$i};
+                animation: 1s move-span infinite alternate  ;
+            }
+            &:nth-child(even) {
+                animation-delay: .5s;
+            }
+        }
+    }
+}
+@keyframes move-span {
+    from {
+        transform: rotate(calc(var(--pos)*9deg)) translateY(50%) scaleY(0.25);
+    }
+    to {
+        transform: rotate(calc(var(--pos)*9deg)) translateY(25%) scaleY(1);
+    }
+}

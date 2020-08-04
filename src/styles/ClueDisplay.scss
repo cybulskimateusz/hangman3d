@@ -1,0 +1,18 @@
+.clue_display {
+    position: absolute;
+    right:5%;
+    top:50%;
+
+    .field {
+        align-items: center;
+        border-bottom: 1px solid white;
+        box-sizing: border-box;
+        color: white;
+        display: inline-flex;
+        height: 24px;
+        margin: 2px;
+        overflow: hidden;
+        text-align: center;
+        width: 10px;
+    }
+}

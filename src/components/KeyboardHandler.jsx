@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import EventListener from 'react-event-listener';
 
@@ -28,4 +28,4 @@ KeyboardHandler.propTypes = {
   isActive: PropTypes.bool.isRequired,
 };
 
-export default KeyboardHandler;
+export default memo(KeyboardHandler);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { removeUser } from 'actions/authActions';
@@ -16,4 +16,4 @@ const LogOutButton = () => {
   return <button className="account_form__button account_form__inner" type="button" onClick={handleClick}> Remove my account </button>;
 };
 
-export default LogOutButton;
+export default memo(LogOutButton);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -24,4 +24,4 @@ SignUpButton.propTypes = {
   password: PropTypes.string.isRequired,
 };
 
-export default SignUpButton;
+export default memo(SignUpButton);

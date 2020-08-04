@@ -1,11 +1,13 @@
 /* eslint-disable no-param-reassign */
-import React from 'react';
+import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 import { setLoadedModels } from 'actions/loadingActions';
 import * as THREE from 'three';
 import PropTypes from 'prop-types';
 import { Canvas } from 'react-three-fiber';
 import Scene from 'components/Scene';
+
+import 'styles/Canvas.scss';
 
 const Folk = ({ show }) => {
   const dispatch = useDispatch();
@@ -32,4 +34,4 @@ Folk.defaultProps = {
   show: 0,
 };
 
-export default Folk;
+export default memo(Folk);

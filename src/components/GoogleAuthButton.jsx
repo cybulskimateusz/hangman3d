@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { loginWithGoogle } from 'actions/authActions';
@@ -13,9 +13,10 @@ const GoogleAuthButton = () => {
         dispatch(loginWithGoogle());
       }}
     >
-      Play with Google
+      <i className="fab fa-google" />
+      <p>Play with Google</p>
     </button>
   );
 };
 
-export default GoogleAuthButton;
+export default memo(GoogleAuthButton);

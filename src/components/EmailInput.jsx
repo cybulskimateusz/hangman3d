@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -38,4 +38,4 @@ EmailInput.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-export default EmailInput;
+export default memo(EmailInput);

@@ -1,0 +1,31 @@
+.game_over_screen {
+    background-color: rgba(0,0,0,.7);
+    bottom: 0;
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    width: 100vw;
+    z-index: 2;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+
+        p {
+            color: rgba(255,255,255,1);
+            font-size: 50px;
+        }
+        button {
+            background: rgba(255,255,255,1);
+            border:none;
+            border-radius: 10px;
+            color: rgba(0,0,0,.5);
+            font-size: 24px;
+            height: 30px;
+            margin: auto;
+            width:200px;
+        }
+    }
+}

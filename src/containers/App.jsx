@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Game from 'containers/Game';
 import { Provider } from 'react-redux';
 import store from 'store/store';
@@ -17,4 +17,4 @@ const App = () => (
   </Provider>
 );
 
-export default App;
+export default memo(App);

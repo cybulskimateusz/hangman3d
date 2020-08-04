@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import uuid from 'react-uuid';
 import PropTypes from 'prop-types';
 import Field from 'components/Field';
+
+import 'styles/ClueDisplay.scss';
 
 const ClueDisplay = ({ clue, exposed }) => (
   <div className="clue_display">
@@ -24,4 +26,4 @@ ClueDisplay.defaultProps = {
   exposed: ['w', 'a', 'i', 't', '.'],
 };
 
-export default ClueDisplay;
+export default memo(ClueDisplay);
