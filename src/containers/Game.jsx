@@ -8,6 +8,7 @@ import KeyboardHandler from 'components/KeyboardHandler';
 import GameOverScreen from 'containers/GameOverScreen';
 import Folk from 'containers/Folk';
 import ClueDisplay from 'containers/ClueDisplay';
+import MissedDisplay from 'containers/MissedDisplay';
 import VirtualKeyboard from 'containers/VirtualKeyboard';
 
 const Game = () => {
@@ -81,6 +82,7 @@ const Game = () => {
       <Folk show={missed.size} />
       <ClueDisplay clue={clue} exposed={Array.from(exposed)} />
       <VirtualKeyboard ignore={[...Array.from(missed), ...Array.from(exposed)]} />
+      <MissedDisplay missed={Array.from(missed)} />
     </>
   );
 };

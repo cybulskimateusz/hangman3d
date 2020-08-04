@@ -1,13 +1,13 @@
-.clue_display {
+.missed_display {
+    left:5%;
     position: absolute;
-    right:5%;
-    top:50%;
+    top:35%;
 
     .field {
         align-items: center;
-        border-bottom: 1px solid rgba(255,255,255,1);
+        border-bottom: 1px solid rgba(255,0,0,1);
         box-sizing: border-box;
-        color: rgba(255,255,255,1);
+        color: rgba(255,0,0,1);
         display: inline-flex;
         height: 24px;
         margin: 2px;

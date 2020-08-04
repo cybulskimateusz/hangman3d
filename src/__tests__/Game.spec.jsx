@@ -7,7 +7,7 @@ import { incrementScore, decrementScore } from 'actions/scoreActions';
 import KeyboardHandler from 'components/KeyboardHandler';
 import { fireEvent, createEvent } from '@testing-library/dom';
 
-jest.mock('components/KeyboardHandler');
+jest.mock('components/KeyboardHandler', () => jest.fn());
 
 jest.mock('containers/Folk', () => {
   const Folk = ({ show }) => (<p>{show}</p>);
