@@ -34,4 +34,24 @@
         margin: 2px;
         width:30px;
     }
+
+    &__animation {
+        &-appear {
+            transform: translateY(50vh);
+        }
+        &-enter {
+            transform: translateY(50vh);
+        }
+        &-enter-done{
+            transform: translateY(0);
+            transition: transform 100ms;
+          }
+          &-exit{
+            transform: translateY(0);
+          }
+          &-exit-active{
+            transform:translateY(50vh);
+            transition: transform 100ms;
+          }
+    }
 }

@@ -14,7 +14,7 @@ const AccountScreeen = () => {
       <CSSTransition
         in={isActive}
         timeout={200}
-        classNames="account_screen__animator"
+        classNames="account_screen__animation"
         unmountOnExit
       >
         <AccountPanel />
