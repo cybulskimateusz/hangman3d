@@ -28,6 +28,8 @@ const EmailInput = ({ onChange }) => {
   return (
     <input
       type="email"
+      name="email"
+      placeholder="e-mail"
       onChange={changeHandler}
       className={className}
     />

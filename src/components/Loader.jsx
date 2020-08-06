@@ -58,7 +58,7 @@ const SpanCircle = () => (
 );
 
 const Loader = () => {
-  const { loadedWord, loadedModels } = useSelector(({ loadingReducer }) => loadingReducer);
+  const { loadedWord, loadedModels } = useSelector(({ appReducer }) => appReducer);
 
   return (loadedModels + loadedWord) < 200 && (
     <div className="loader__outter">

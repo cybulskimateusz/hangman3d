@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import fetchWord from 'utils/fetchWord';
 
 import { incrementScore, decrementScore } from 'actions/scoreActions';
-import { setLoadedWord } from 'actions/loadingActions';
+import { setLoadedWord } from 'actions/appActions';
 import KeyboardHandler from 'components/KeyboardHandler';
 import GameOverScreen from 'containers/GameOverScreen';
 import Folk from 'containers/Folk';
@@ -12,7 +12,9 @@ import MissedDisplay from 'containers/MissedDisplay';
 import VirtualKeyboard from 'containers/VirtualKeyboard';
 
 const Game = () => {
-  const { loadedWord, loadedModels } = useSelector(({ loadingReducer }) => loadingReducer);
+  const { loadedWord, loadedModels, authScreenActive } = useSelector(
+    ({ appReducer }) => appReducer,
+  );
   const [isReady, setIsReady] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [char, setChar] = useState();
@@ -78,7 +80,7 @@ const Game = () => {
   return (
     <>
       <GameOverScreen isActive={gameOver} resetFunc={reset} />
-      <KeyboardHandler onPressed={setChar} isActive={!gameOver && isReady} />
+      <KeyboardHandler onPressed={setChar} isActive={!authScreenActive && !gameOver && isReady} />
       <Folk show={missed.size} />
       <ClueDisplay clue={clue} exposed={Array.from(exposed)} />
       <VirtualKeyboard ignore={[...Array.from(missed), ...Array.from(exposed)]} />

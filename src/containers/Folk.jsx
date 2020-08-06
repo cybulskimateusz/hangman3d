@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
-import { setLoadedModels } from 'actions/loadingActions';
+import { setLoadedModels } from 'actions/appActions';
 import * as THREE from 'three';
 import PropTypes from 'prop-types';
 import { Canvas } from 'react-three-fiber';

@@ -20,10 +20,10 @@ jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
 }));
 
-const mockStoreWithLoadingReducer = (loadingReducer) => useSelector.mockImplementation(
+const mockStoreWithAppReducer = (appReducer) => useSelector.mockImplementation(
   (selector) => selector({
     scoreReducer: 0,
-    loadingReducer,
+    appReducer,
   }),
 );
 
@@ -46,34 +46,49 @@ describe('<Game /> loading', () => {
     jest.clearAllMocks();
   });
 
-  it(' should not be ready on loadedWord = 0', async () => {
-    const loadingReducer = {
+  it(' should not be active on loadedWord = 0', async () => {
+    const appReducer = {
       loadedWord: 0,
       loadedModels: 100,
+      authScreenActive: false,
     };
-    mockStoreWithLoadingReducer(loadingReducer);
+    mockStoreWithAppReducer(appReducer);
     let component;
     await act(async () => { component = render(<Game />); });
     expect(component.baseElement.querySelector('.isActive').innerHTML).toContain('false');
   });
 
-  it(' should not be ready on loadedModels = 0', async () => {
-    const loadingReducer = {
+  it(' should not be active on loadedModels = 0', async () => {
+    const appReducer = {
       loadedWord: 100,
       loadedModels: 0,
+      authScreenActive: false,
     };
-    mockStoreWithLoadingReducer(loadingReducer);
+    mockStoreWithAppReducer(appReducer);
     let component;
     await act(async () => { component = render(<Game />); });
     expect(component.baseElement.querySelector('.isActive').innerHTML).toContain('false');
   });
 
-  it(' should be ready on everything loaded', async () => {
-    const loadingReducer = {
+  it(' should not be active on authScreenActive = true', async () => {
+    const appReducer = {
       loadedWord: 100,
       loadedModels: 100,
+      authScreenActive: true,
     };
-    mockStoreWithLoadingReducer(loadingReducer);
+    mockStoreWithAppReducer(appReducer);
+    let component;
+    await act(async () => { component = render(<Game />); });
+    expect(component.baseElement.querySelector('.isActive').innerHTML).toContain('false');
+  });
+
+  it(' should be active on everything loaded and not authScreenActive', async () => {
+    const appReducer = {
+      loadedWord: 100,
+      loadedModels: 100,
+      authScreenActive: false,
+    };
+    mockStoreWithAppReducer(appReducer);
     let component;
     await act(async () => { component = render(<Game />); });
     expect(component.baseElement.querySelector('.isActive').innerHTML).toContain('true');
@@ -82,11 +97,12 @@ describe('<Game /> loading', () => {
 
 describe('<Game /> store connection', () => {
   beforeEach(() => {
-    const loadingReducer = {
+    const appReducer = {
       loadedWord: 100,
       loadedModels: 100,
+      authScreenActive: false,
     };
-    mockStoreWithLoadingReducer(loadingReducer);
+    mockStoreWithAppReducer(appReducer);
   });
 
   afterEach(() => {

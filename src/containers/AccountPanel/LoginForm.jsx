@@ -14,7 +14,7 @@ const LoginForm = () => {
   const passwordChange = (value) => setPassword(value);
 
   return (
-    <form className="account_form">
+    <form autoComplete="on" className="account_form">
       <EmailInput onChange={emailChange} />
       <PasswordInput onChange={passwordChange} />
       <LogInButton email={email} password={password} />
